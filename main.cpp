@@ -20,14 +20,14 @@ int binaryToAscii(std::string binary) {
 std::string getAscii() {
     using namespace std;
     string input{}; // binary str input
-    string output{}; // holds binary ascii representation
     cout << "Please enter some binary to convert to ASCII:";
     getline(cin, input); // get binary string -> input
-    
-    istringstream iss(input); // input stream
-    string temp{}; // temp str
+
     // binary -> ascii output
-    while (getline( iss, temp, ' ' ) ) {
+    istringstream iss(input); // input stream
+    string output{}; // holds binary ascii representation
+    string temp{}; // temp str
+    while (getline(iss, temp, ' ')) {
         output += static_cast<char>(binaryToAscii(temp)); // binary -> ascii
     }
 
